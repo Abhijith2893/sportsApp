@@ -26,7 +26,8 @@ functions:
           path: soccer/all
           method: get
           cors: true
+    memorySize: 128
 
 resources:
   # API Gateway Errors
-  - ${file(resources/api-gateway-errors.yml)}
+  - ${file(resources/api-gateway-errors.yaml)}
