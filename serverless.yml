@@ -26,3 +26,7 @@ functions:
           path: soccer/all
           method: get
           cors: true
+
+resources:
+  # API Gateway Errors
+  - ${file(resources/api-gateway-errors.yml)}
