@@ -16,7 +16,7 @@ provider:
   region: us-east-1
 
   environment:
-    baseUrl: 'https://www.thesportsdb.com/api/v1/json/1/'
+    baseUrl: 'https://www.thesportsdb.com/api/v1/json/1'
 
 functions:
   list:

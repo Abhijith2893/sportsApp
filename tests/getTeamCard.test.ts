@@ -1,4 +1,4 @@
-import { Card } from "../utils/class";
+import { Card } from "../utils/class/card";
 import { getTeamCard } from "../utils/helper";
 
 test("get team card - success", () => {
@@ -27,6 +27,19 @@ test("get team card - multiple teams", () => {
 		expect(res[i]).toHaveProperty('logo');
 		expect(res[i]).toEqual({name:strTeam,logo:strTeamBadge});
 	});
+});
+
+test("get team card - additional keys", () => {
+	const strTeam = "Chelsea";
+	const strTeamBadge = "https://image.com";
+	const location = "London";
+	const data = {teams:[{strTeam,strTeamBadge,location}]};
+	const res = getTeamCard(data);
+	expect(res).toBeInstanceOf(Array);
+	expect(res[0]).toBeInstanceOf(Card);
+	expect(res[0]).toHaveProperty('name');
+	expect(res[0]).toHaveProperty('logo');
+	expect(res).toEqual([{name:strTeam,logo:strTeamBadge}]);
 });
 
 test("get team card - no name", () => {

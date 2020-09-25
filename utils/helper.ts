@@ -1,4 +1,4 @@
-import { Card } from "./class";
+import { Card } from "./class/card";
 
 export const getTeamCard = (data) => {
     let res = [];
