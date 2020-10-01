@@ -14,6 +14,8 @@ provider:
   runtime: nodejs12.x
   stage: prod
   region: us-east-1
+  apiKeys:
+    - ${self:provider.stage}-apiKeyName1
 
   environment:
     baseUrl: 'https://www.thesportsdb.com/api/v1/json/1'
@@ -26,6 +28,7 @@ functions:
           path: soccer/all
           method: get
           cors: true
+          private: true
     memorySize: 128
 
 resources:
