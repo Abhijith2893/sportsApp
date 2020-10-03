@@ -39,6 +39,7 @@ functions:
           cors: true
           private: true
     memorySize: 128
+    timeout: 10
 
 resources:
   # API Gateway Errors
