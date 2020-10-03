@@ -21,11 +21,20 @@ provider:
     baseUrl: 'https://www.thesportsdb.com/api/v1/json/1'
 
 functions:
-  list:
-    handler: src/list.main
+  soccer-list:
+    handler: src/Soccer/list.main
     events:
       - http:
           path: soccer/all
+          method: get
+          cors: true
+          private: true
+    memorySize: 128
+  soccer-standings:
+    handler: src/Soccer/standings.main
+    events:
+      - http:
+          path: soccer/standings
           method: get
           cors: true
           private: true

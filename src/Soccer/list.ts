@@ -1,6 +1,6 @@
-import handler from "../libs/handler-lib";
-import { AxiosCall } from "../utils/class/axios";
-import { getTeamCard } from "../utils/helper";
+import handler from "../../libs/handler-lib";
+import { AxiosCall } from "../../utils/class/axios";
+import { getTeamCard } from "../../utils/helper";
 
 export const main = handler(async(event, context) => {
   try{
