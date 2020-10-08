@@ -5,7 +5,7 @@ import { getTeamCard } from "../../utils/helper";
 export const main = handler(async(event, context) => {
   try{
     const axios = new AxiosCall;
-    const res = await axios.getAllSoccerTeams;
+    const res:any = await axios.getAllSoccerTeams;
     return getTeamCard(res.data);
   }catch(err){
     throw err;

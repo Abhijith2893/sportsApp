@@ -41,6 +41,15 @@ functions:
           private: true
     memorySize: 128
     timeout: 10
+  soccer-team-schedule:
+    handler: src/Soccer/teamSchedule.main
+    events:
+      - http:
+          path: soccer/teamSchedule/{teamName}
+          method: get
+          cors: true
+          private: true
+    memorySize: 128
   populate-data-team-id:
     handler: utils/populateData/espn-clone-team-id.main
     memorySize: 128

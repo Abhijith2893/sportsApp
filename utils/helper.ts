@@ -1,4 +1,5 @@
 import { Card } from './class/card';
+import { ScheduleCard } from './class/scheduleCard';
 import { TeamStats } from './class/teamStats';
 
 export const getTeamCard = (data) => {
@@ -24,5 +25,18 @@ export const getLeagueStandings = (data) => {
         return res;
     }catch(err){
         throw(err);
+    }
+};
+
+export const getTeamSchedule = (data) => {
+    let res = [];
+    try{
+        data.forEach(schedule => {
+            let scheduleCard = new ScheduleCard(schedule.strEvent,schedule.strLeague,schedule.strTimestamp);
+            res.push(scheduleCard.getLocalSchedule(scheduleCard));
+        });
+        return res;
+    }catch(err){
+        throw err;
     }
 };

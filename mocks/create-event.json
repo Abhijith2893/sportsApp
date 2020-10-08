@@ -4,5 +4,6 @@
       "identity": {
         "cognitoIdentityId": "USER-SUB-1234"
       }
-    }
+    },
+    "pathParameters": {"teamName":"Liverpool"}
 }
