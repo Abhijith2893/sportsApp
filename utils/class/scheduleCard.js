@@ -1,15 +1,13 @@
 export class ScheduleCard {
     constructor(event,league,dateTime){
         this.event = event;
-        this.league = league;
+        this.league = this.getLeagueLogo(league);
         this.dateTime = dateTime;
     }
 
-    getLocalSchedule(data){
-        const localDate = new Date(data.dateTime).toLocaleDateString();
-        const localTime = new Date(data.dateTime).toLocaleTimeString();
+    getLeagueLogo(league){
         let leagueLogoUrl;
-        switch(data.league){
+        switch(league){
             case('English Premier League'):
                 leagueLogoUrl = 'https://www.thesportsdb.com/images/media/league/badge/i6o0kh1549879062.png';
                 break;
@@ -20,11 +18,6 @@ export class ScheduleCard {
                 leagueLogoUrl = 'https://www.thesportsdb.com/images/media/league/badge/yymdqh1597494330.png';
                 break;
         };
-        return{
-            event: data.event,
-            league: leagueLogoUrl,
-            startDate: localDate,
-            startTime: localTime
-        };
+        return leagueLogoUrl;
     }
 }

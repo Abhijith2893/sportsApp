@@ -7,7 +7,8 @@ export const main = handler(async(event, context) => {
 		const result = [];
 		try{
 			const axios = new AxiosCall;
-			const res:any = await axios.getAllSoccerTeams;
+			const res = await axios.getAllSoccerTeams;
+			//@ts-ignore
 			res.data.teams.forEach(team => {
 				let teamDetails = {
 					sport: "soccer",

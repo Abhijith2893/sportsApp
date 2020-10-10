@@ -28,12 +28,12 @@ export const getLeagueStandings = (data) => {
     }
 };
 
-export const getTeamSchedule = (data) => {
+export const getTeamScheduleCard = (data) => {
     let res = [];
     try{
         data.forEach(schedule => {
             let scheduleCard = new ScheduleCard(schedule.strEvent,schedule.strLeague,schedule.strTimestamp);
-            res.push(scheduleCard.getLocalSchedule(scheduleCard));
+            res.push(scheduleCard);
         });
         return res;
     }catch(err){
